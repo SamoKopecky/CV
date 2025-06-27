@@ -14,6 +14,5 @@ jobs:
         with:
           release_url: ${{ steps.create_release.outputs.release_url }}
           file_name: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.event.client_payload.repository }}
 
