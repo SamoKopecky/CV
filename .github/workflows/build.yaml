@@ -11,13 +11,7 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Create release
-        id: create_release
-        uses: SamoKopecky/.github/.github/actions/create-time-release@main
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and publish
+      - name: Release, Build and publish
         uses: SamoKopecky/.github/.github/actions/latex-to-release-pdf@main
         with:
           release_url: ${{ steps.create_release.outputs.release_url }}
